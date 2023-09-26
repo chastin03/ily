@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ILY.com</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Impact, fantasy;
+            background-image: url('https://t3.ftcdn.net/jpg/05/01/35/22/360_F_501352271_VPcKW0D7cYn95b9q1f8NBm11luGaNphn.jpg');
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Center align text in the container */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #555;
+            text-align: center; /* Center align text within paragraphs */
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .button.yes {
+            background-color: #28a745;
+        }
+        .button.no {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Strawberry Shortcake</h1>
+        <p>
+            Dear Fergievon,
+        </p>
+            In the garden of my heart, you're the sweetest fruit,
+            My Strawberry Shortcake, so cute and absolute.
+        </p>
+            Your laughter is the sunshine, warm and bright,
+            Like strawberry fields kissed by the morning light.
+        </p>
+            Your smile, a berry's sweetness, so pure and divine,
+            In your presence, my heart dances like sweet red wine.
+        </p>
+            Your love, a garden of strawberries, ripe and so sweet,
+            With each tender moment, our connection is complete.
+        </p>
+            You're the strawberry in the fields of my dreams,
+            My Strawberry Shortcake, in your love, it seems.
+        </p>
+            So, let's pick the moments, like strawberries so red,
+            Loving you, my dear, is where I'm truly led.
+        </p>
+            hehehe ILY pu, will you be my gf?
+        
+        <p>
+            Sincerely,
+            Chastin
+</p>
+        <div class="button-container">
+            <button class="button yes" onclick="openCertificate()">Yes</button>
+            <button class="button no" onclick="moveButtonRandomly(this)">No</button>
+        </div>
+        </p>
+        <img id="dynamicImage" src="https://pbs.twimg.com/media/E19t0A_VgAENZJA.jpg" alt="Dynamic Image" style="display: block; margin: 0 auto; max-width: 100%;" />
+    </div>
+    
+    <script>
+        function moveButtonRandomly(button) {
+            // Get the button's container
+            const buttonContainer = document.querySelector(".button-container");
+            
+            // Remove the "No" button from its current position
+            buttonContainer.removeChild(button);
+            
+            // Generate random coordinates for the new position
+            const randomX = Math.floor(Math.random() * (window.innerWidth - 100));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - 50));
+            
+            // Create a new "No" button
+            const newButton = document.createElement("button");
+            newButton.className = "button no";
+            newButton.innerText = "No";
+            newButton.style.position = "absolute";
+            newButton.style.left = randomX + "px";
+            newButton.style.top = randomY + "px";
+            newButton.onclick = function () {
+                moveButtonRandomly(newButton);
+            };
+            
+            // Append the new button to the container
+            buttonContainer.appendChild(newButton);
+        }
+
+        function openCertificate() {
+            // Open the specified link in a new tab
+            window.open('https://i.imgur.com/nk0vYv7.png', '_blank');
+        }
+    </script>
+</body>
+</html>
